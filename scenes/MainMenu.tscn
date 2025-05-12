@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://dexihytip6yfw"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8smyu"]
+[ext_resource type="FontFile" uid="uid://dt6jbuskqvs7g" path="res://assets/font/pixelmix/pixelmix.ttf" id="1_muohm"]
+[ext_resource type="Script" path="res://scripts/playbutton.gd" id="2_10nkh"]
+[ext_resource type="FontFile" uid="uid://b3rep7lg8f6oi" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_wv2bw"]
+
+[sub_resource type="Theme" id="Theme_0m0ju"]
+default_font = ExtResource("1_muohm")
+
+[sub_resource type="Theme" id="Theme_8wt50"]
+default_font = ExtResource("1_muohm")
+
+[sub_resource type="ImageTexture" id="ImageTexture_6hx2t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ch07"]
+font = ExtResource("3_wv2bw")
+font_size = 60
+font_color = Color(1, 1, 0.0196078, 1)
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8smyu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -38.5
+offset_right = 152.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0m0ju")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_8wt50")
+text = "Play"
+icon = SubResource("ImageTexture_6hx2t")
+script = ExtResource("2_10nkh")
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Something"
+icon = SubResource("ImageTexture_6hx2t")
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+icon = SubResource("ImageTexture_6hx2t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.5
+offset_top = 49.0
+offset_right = 272.5
+offset_bottom = 118.624
+grow_horizontal = 2
+text = "Puchito's Birthday"
+label_settings = SubResource("LabelSettings_0ch07")
+
+[connection signal="button_up" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_button_up"]

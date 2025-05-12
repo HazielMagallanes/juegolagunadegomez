@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://br0i3hued2y36"]
+
+[ext_resource type="Script" uid="uid://c0dxmmjnwe87k" path="res://scripts/Global.gd" id="1_030tr"]
+[ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://scenes/UI/DayNightCycleUI.tscn" id="3_264ya"]
+[ext_resource type="Script" uid="uid://cb3ko1svjk3qa" path="res://scripts/singletons/DayNightCycle.gd" id="4_okk42"]
+[ext_resource type="AudioStream" uid="uid://c28n7jymgl53i" path="res://assets/music/pelicantown.ogg" id="5_p7lbg"]
+[ext_resource type="Texture2D" uid="uid://b57l3ad1odil" path="res://assets/daynightcycle-gradient-texture.tres" id="5_vsq7f"]
+[ext_resource type="PackedScene" uid="uid://dexihytip6yfw" path="res://scenes/MainMenu.tscn" id="6_svp8v"]
+[ext_resource type="PackedScene" uid="uid://ddnhn8nsm33na" path="res://scenes/UI/DialogPlayer.tscn" id="8_ts610"]
+
+[node name="Game" type="Window"]
+mode = 3
+title = "Puchito's Valley"
+initial_position = 1
+size = Vector2i(1366, 768)
+content_scale_mode = 1
+content_scale_aspect = 4
+script = ExtResource("1_030tr")
+
+[node name="Clock" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="DayNightCycleUI" parent="Clock" instance=ExtResource("3_264ya")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(2, 2)
+
+[node name="DialogPlayer" parent="." instance=ExtResource("8_ts610")]
+
+[node name="TimeVFX" type="CanvasModulate" parent="."]
+script = ExtResource("4_okk42")
+gradientTexture = ExtResource("5_vsq7f")
+
+[node name="Level" type="Node" parent="."]
+
+[node name="Level" parent="Level" instance=ExtResource("6_svp8v")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_p7lbg")

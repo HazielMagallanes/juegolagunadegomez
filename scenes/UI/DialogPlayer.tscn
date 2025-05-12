@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddnhn8nsm33na"]
+
+[ext_resource type="Texture2D" uid="uid://xxnlgv25j0oh" path="res://assets/spritesheets/UI/SpaceTextbox.png" id="1_6xawr"]
+[ext_resource type="Script" path="res://scripts/DialogPlayer.gd" id="1_bw2r7"]
+[ext_resource type="FontFile" uid="uid://b3rep7lg8f6oi" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_jwaqv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cvde"]
+font = ExtResource("3_jwaqv")
+font_size = 40
+font_color = Color(0.253486, 0.0128472, 0.24883, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7q51s"]
+font = ExtResource("3_jwaqv")
+font_size = 36
+font_color = Color(0.253486, 0.0128472, 0.24883, 1)
+outline_size = 11
+outline_color = Color(0.869298, 0.717522, 0.445506, 1)
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_bw2r7")
+
+[node name="background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -471.0
+offset_top = -323.0
+offset_right = 472.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_6xawr")
+
+[node name="textLabel" type="Label" parent="background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -101.5
+offset_right = 416.0
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_0cvde")
+autowrap_mode = 3
+
+[node name="Name" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -471.0
+offset_top = -392.0
+offset_right = -216.0
+offset_bottom = -322.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_6xawr")
+
+[node name="textLabel" type="Label" parent="Name"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -24.5
+offset_right = 108.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_7q51s")
+vertical_alignment = 1
+autowrap_mode = 3

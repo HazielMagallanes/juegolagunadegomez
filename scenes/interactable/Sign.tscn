@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqgb2upci1af7"]
+
+[ext_resource type="Texture2D" uid="uid://c3af7wr616okk" path="res://assets/spritesheets/town/sign.png" id="1_11k83"]
+[ext_resource type="PackedScene" uid="uid://w3nenw84uf03" path="res://scenes/DialogArea.tscn" id="2_3fmcv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cehmb"]
+size = Vector2(104, 113)
+
+[node name="Sign" type="Sprite2D"]
+texture = ExtResource("1_11k83")
+metadata/dialog = ["Casa DEBUG"]
+
+[node name="DialogArea" parent="." instance=ExtResource("2_3fmcv")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_cehmb")

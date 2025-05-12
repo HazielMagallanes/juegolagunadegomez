@@ -1,0 +1,35 @@
+{
+	"name" : "DebugNPC",
+	"home_coordinates": [0, 0],
+	"bed_coordinates": [0, 0],
+	"dialogues" : {
+		"interacted" : {
+			"0" : {
+				"text" : "Esto es un dialogo default.",
+				"options" : {
+					"0" : {
+						"text" : "Esto es una primera opción.",
+						"result" : "Esto es un resultado."
+					},
+					"1" : {
+						"text" : "Esto es una segunda opción.",
+						"result" : "Esto es otro resultado."
+					}
+				}
+			},
+		},
+		"working" : {
+			"1" : "Esto es un dialogo de trabajo"
+		}
+	},
+	"routine" : {
+		"default" : {
+			"9" : {
+				"name": "breakfast",
+				"path": [[200, 500]]
+			},
+			"20" : "go_home", 
+			"23" : "sleep"
+		}
+	}
+}

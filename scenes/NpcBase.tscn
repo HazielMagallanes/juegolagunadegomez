@@ -1,0 +1,176 @@
+[gd_scene load_steps=13 format=3 uid="uid://odqflhctnhw4"]
+
+[ext_resource type="Script" path="res://scripts/classes/npc/NPCBase.gd" id="1_pblw5"]
+[ext_resource type="Texture2D" uid="uid://dgscgugdn0afu" path="res://assets/spritesheets/npc/haziel.png" id="2_o54vr"]
+[ext_resource type="PackedScene" uid="uid://w3nenw84uf03" path="res://scenes/DialogArea.tscn" id="3_3aecu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn88y"]
+size = Vector2(71, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgss2"]
+size = Vector2(28, 63)
+
+[sub_resource type="Animation" id="Animation_dhp7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_0koap"]
+resource_name = "stucked"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.5, 0.7, 0.833333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(3.85, 3.85), Vector2(4.835, 4.835), Vector2(2.94, 2.94), Vector2(4.875, 4.875), Vector2(3.475, 3.475), Vector2(4.47, 4.47)]
+}
+
+[sub_resource type="Animation" id="Animation_ftvd3"]
+resource_name = "walk_fdown"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_guy31"]
+resource_name = "walk_fleft"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_gv1xh"]
+resource_name = "walk_fright"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_hkyan"]
+resource_name = "walk_fup"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d54ko"]
+_data = {
+"RESET": SubResource("Animation_dhp7a"),
+"stucked": SubResource("Animation_0koap"),
+"walk_fdown": SubResource("Animation_ftvd3"),
+"walk_fleft": SubResource("Animation_guy31"),
+"walk_fright": SubResource("Animation_gv1xh"),
+"walk_fup": SubResource("Animation_hkyan")
+}
+
+[node name="NpcBase" type="CharacterBody2D"]
+z_index = 2
+y_sort_enabled = true
+input_pickable = true
+script = ExtResource("1_pblw5")
+metadata/NPCId = "default"
+metadata/dialog = {}
+
+[node name="DialogInteractionArea" parent="." instance=ExtResource("3_3aecu")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DialogInteractionArea"]
+position = Vector2(-1.5, -1.5)
+shape = SubResource("RectangleShape2D_sn88y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_o54vr")
+hframes = 8
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+y_sort_enabled = true
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_wgss2")
+debug_color = Color(0.925377, 0.243567, 0.321157, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d54ko")
+}
+
+[node name="Unstucker" type="Timer" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Unstucker" to="." method="unstucker"]
