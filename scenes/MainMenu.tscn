@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dexihytip6yfw"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8smyu"]
+[ext_resource type="Script" uid="uid://cteaxcqyvmehd" path="res://scripts/main_menu.gd" id="1_8smyu"]
 [ext_resource type="FontFile" uid="uid://dt6jbuskqvs7g" path="res://assets/font/pixelmix/pixelmix.ttf" id="1_muohm"]
-[ext_resource type="Script" path="res://scripts/playbutton.gd" id="2_10nkh"]
+[ext_resource type="Script" uid="uid://yppd466avo6c" path="res://scripts/playbutton.gd" id="2_10nkh"]
 [ext_resource type="FontFile" uid="uid://b3rep7lg8f6oi" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_wv2bw"]
 
 [sub_resource type="Theme" id="Theme_0m0ju"]
@@ -72,7 +72,8 @@ offset_top = 49.0
 offset_right = 272.5
 offset_bottom = 118.624
 grow_horizontal = 2
-text = "Puchito's Birthday"
+text = "Placeholder"
 label_settings = SubResource("LabelSettings_0ch07")
+horizontal_alignment = 1
 
 [connection signal="button_up" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_button_up"]

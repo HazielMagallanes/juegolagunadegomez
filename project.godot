@@ -13,6 +13,9 @@ config_version=5
 config/name="Un Día en la Laguna de Gómez"
 run/main_scene="uid://br0i3hued2y36"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
