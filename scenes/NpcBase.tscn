@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://odqflhctnhw4"]
 
-[ext_resource type="Script" path="res://scripts/classes/npc/NPCBase.gd" id="1_pblw5"]
-[ext_resource type="Texture2D" uid="uid://dgscgugdn0afu" path="res://assets/spritesheets/npc/haziel.png" id="2_o54vr"]
+[ext_resource type="Script" uid="uid://ddau3ku50bxkm" path="res://scripts/classes/npc/NPCBase.gd" id="1_pblw5"]
 [ext_resource type="PackedScene" uid="uid://w3nenw84uf03" path="res://scenes/DialogArea.tscn" id="3_3aecu"]
+[ext_resource type="Texture2D" uid="uid://ddbavmob61ia1" path="res://assets/spritesheets/player/player.png" id="3_lx0kk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn88y"]
 size = Vector2(71, 95)
@@ -127,12 +127,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d54ko"]
 _data = {
-"RESET": SubResource("Animation_dhp7a"),
-"stucked": SubResource("Animation_0koap"),
-"walk_fdown": SubResource("Animation_ftvd3"),
-"walk_fleft": SubResource("Animation_guy31"),
-"walk_fright": SubResource("Animation_gv1xh"),
-"walk_fup": SubResource("Animation_hkyan")
+&"RESET": SubResource("Animation_dhp7a"),
+&"stucked": SubResource("Animation_0koap"),
+&"walk_fdown": SubResource("Animation_ftvd3"),
+&"walk_fleft": SubResource("Animation_guy31"),
+&"walk_fright": SubResource("Animation_gv1xh"),
+&"walk_fup": SubResource("Animation_hkyan")
 }
 
 [node name="NpcBase" type="CharacterBody2D"]
@@ -152,7 +152,7 @@ shape = SubResource("RectangleShape2D_sn88y")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("2_o54vr")
+texture = ExtResource("3_lx0kk")
 hframes = 8
 vframes = 4
 
@@ -165,7 +165,7 @@ debug_color = Color(0.925377, 0.243567, 0.321157, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_d54ko")
+&"": SubResource("AnimationLibrary_d54ko")
 }
 
 [node name="Unstucker" type="Timer" parent="."]

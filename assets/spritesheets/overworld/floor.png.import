@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxbu0b7ypo4qg"
-path="res://.godot/imported/wantsu.png-374034596168a31fe7be3dfc339b7ac2.ctex"
+uid="uid://b3c621atlhthk"
+path="res://.godot/imported/floor.png-ad893ee9ef3096066ee613ecb5889bdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheets/npc/wantsu.png"
-dest_files=["res://.godot/imported/wantsu.png-374034596168a31fe7be3dfc339b7ac2.ctex"]
+source_file="res://assets/spritesheets/overworld/floor.png"
+dest_files=["res://.godot/imported/floor.png-ad893ee9ef3096066ee613ecb5889bdf.ctex"]
 
 [params]
 
